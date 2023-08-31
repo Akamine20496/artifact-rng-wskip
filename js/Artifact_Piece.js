@@ -257,7 +257,7 @@ class Artifact_Piece {
 
 			Dialog.showMessageDialog('Final Stats', `${temp.s1}\n${temp.s2}\n${temp.s3}\n${temp.s4}`);
 		} else {
-			throw new Error('Invalid Argument: must be boolean!');
+			throw new Error('Skip Mode must to turned on!');
 		}
 	}
 
