@@ -1,1 +1,1 @@
-# artifact-rng-wskip
+# Artifact RNG w/ Skip Button
