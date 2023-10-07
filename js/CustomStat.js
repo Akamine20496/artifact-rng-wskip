@@ -23,7 +23,6 @@ class Custom_Stat {
     // elements from the control-panel
     #btnSkip = document.getElementById('btnSkip');
     #btnRoll = document.getElementById('btnRoll');
-    #btnReroll = document.getElementById('btnReroll');
     #btnReset = document.getElementById('btnReset');
     #btnCustomStat = document.getElementById('btnCustomStat');
     #btnGenerate = document.getElementById('btnGenerate');
@@ -344,7 +343,6 @@ class Custom_Stat {
         
         this.#btnSkip.disabled = false;
         this.#btnRoll.disabled = false;
-        this.#btnReroll.disabled = false;
         this.#btnReset.disabled = false;
         this.#btnCustomStat.disabled = true;
         this.#btnRoll.focus();
