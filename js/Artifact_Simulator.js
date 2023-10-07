@@ -62,7 +62,7 @@ class Artifact_Simulator {
                 Dialog.showMessageDialog('Artifact RNG', 'Click the \'Lock\' first.');
             } else {
                 const selectedPiece = this.#cboArtifactPiece.value;
-				this.#artifactPiece.setArtifactPiece(selectedPiece);
+		this.#artifactPiece.setArtifactPiece(selectedPiece);
                 this.#artifactPiece.generateStat();
 
                 this.#pMaxUpgradeValue.innerText = this.#artifactPiece.getMaxUpgrade();
@@ -71,7 +71,6 @@ class Artifact_Simulator {
                 this.#btnLock.disabled = true;
                 this.#btnSkip.disabled = false;
                 this.#btnRoll.disabled = false;
-                this.#btnReroll.disabled = false;
                 this.#btnReset.disabled = false;
                 this.#btnCustomStat.disabled = true;
                 this.#btnRoll.focus();
@@ -93,6 +92,10 @@ class Artifact_Simulator {
         this.#btnRoll.addEventListener('click', () => {
             this.#artifactPiece.setSkipMode('false');
             this.#btnSkip.disabled = true;
+			
+	    if (this.#rollCounter > 1 || this.#isNewAttribute) {
+		this.#btnReroll.disabled = false;
+	    }
 
             if (Number(this.#pMaxUpgradeValue.innerText) === 4 && this.#isNewAttribute) {
                 this.#artifactPiece.upgradeValue();
@@ -114,7 +117,7 @@ class Artifact_Simulator {
             this.#artifactPiece.rerollStat();
             this.#btnSkip.disabled = false;
             this.#btnRoll.disabled = false;
-            this.#btnReroll.disabled = false;
+            this.#btnReroll.disabled = true;
             this.#btnReset.disabled = false;
             this.#rollCounter = 1;
             this.#isNewAttribute = true;
